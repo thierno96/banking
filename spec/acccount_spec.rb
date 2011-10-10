@@ -17,4 +17,20 @@ describe Account do
     subject = Account.new(starting_balance)
     subject.balance.should == starting_balance
   end
+
+  it "should have a balance that is greater than the amount requested" do
+    starting_balance = 100.00
+    subject = Account.new(starting_balance)
+    subject.deposit(200.00)
+    subject.withdraw(50)
+    subject.balance.should > 0
+  end
+
+  it "should have a balance greater than the amount to be transferred" do
+    starting_balance = 500
+    subject = Account.new(starting_balance)
+    subject.transfer_to(Account.new(10), 500)
+    subject.balance.should >= 0
+    end
+
 end
