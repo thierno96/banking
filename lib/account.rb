@@ -1,7 +1,9 @@
 # account.rb
 
 class Account
-  def balance
-    0.0
+  attr_reader :balance
+  def initialize(starting_balance)
+    @balance = starting_balance
   end
+
 end
