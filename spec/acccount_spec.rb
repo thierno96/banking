@@ -8,6 +8,8 @@ describe Account do
   it "should initially have a balance of zero"  do
     account = Account.new(100.00)
     account.balance.should == 100.00
+    account.deposit(200.00)
+    account.balance.should >= 100.00
   end
 
   it "should have a balance equal to the starting balance" do
